@@ -1,0 +1,25 @@
+ans = []
+
+for _ in range(int(input())):
+    input()
+    arr = list(map(int, input().split()))
+    arr.sort(reverse=True)
+
+    x = arr[0]
+    y = arr[1]
+
+    flag = True
+
+    for i in range(2, len(arr)):
+        q = x % y
+        if q != arr[i]:
+            ans.append(str(-1))
+            flag = False
+            break
+        x = y
+        y = q
+    
+    if flag:
+        ans.append(f"{arr[0]} {arr[1]}")
+
+print("\n".join(ans))

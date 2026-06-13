@@ -1,0 +1,28 @@
+arr = [4] * 13
+
+indicies = {
+    'A': 0,
+    '2': 1,
+    '3': 2,
+    '4': 3,
+    '5': 4,
+    '6': 5,
+    '7': 6,
+    '8': 7,
+    '9': 8,
+    '10': 9,
+    'J': 10,
+    'Q': 11,
+    'K': 12
+}
+
+ans = []
+for _ in range(int(input())):
+    command, card = input().split()
+
+    if command == 'I':
+        ans.append(str(arr[indicies[card]]))
+    else:
+        arr[indicies[card]] -= 1
+
+print("\n".join(ans))
